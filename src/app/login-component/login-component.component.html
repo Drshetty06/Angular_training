@@ -1,0 +1,84 @@
+
+
+<section class="body">
+  <div>
+    <img style="padding-top: 35px" class="image" src="./../../assets/logo.png" />
+  </div>
+
+  <div class="main-div col-xl-4 col-lg-5 col-md-7 mx-auto">
+    <nz-card class="nz-tabs">
+      <div class="container">
+        <div class="button-container">
+          <div class="col-6">
+            <button nz-button nzType="primary" class="button header-button"
+              [ngClass]="{ 'selected-tab': isUserNamePasswordLogin }" (click)="changeTabs('userName')">
+              User Name
+            </button>
+          </div>
+
+          <div class="vl"></div>
+
+          <div class="col-6">
+            <button nz-button nzType="primary" class="button header-button"
+              [ngClass]="{ 'selected-tab': !isUserNamePasswordLogin }" (click)="changeTabs('userOtp')">
+              OTP Login
+            </button>
+          </div>
+        </div>
+
+        <div *ngIf="isUserNamePasswordLogin">
+          <form nz-form [formGroup]="userEmails" (ngSubmit)="onSubmit()">
+            <nz-form-item>
+              <nz-form-control>
+                <input appFirstLetter class="inp" placeholder="Username*"
+                  [class.is-invalid]="primEmail?.invalid && primEmail?.touched" type="email"
+                  formControlName="primaryEmail" />
+                <div *ngIf="
+                    (primEmail?.invalid && primEmail?.touched) ||
+                    primEmail?.dirty
+                  ">
+                  <small *ngIf="primEmail?.errors?.required" class="text">Please Enter Username</small>
+
+                  <small *ngIf="primEmail?.errors?.pattern" class="text">Please enter E-mail ID in format
+                    yourname@example.com</small>
+                </div>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control>
+                <input appFirstLetter class="inp" placeholder="Password*" type="password" [class.is-invalid]="
+                    primPassword?.invalid && primPassword?.touched
+                  " formControlName="primaryPassword" />
+                <div *ngIf="
+                    (primPassword?.invalid && primPassword?.touched) ||
+                    primPassword?.dirty
+                  ">
+                  <small *ngIf="primPassword?.errors?.required" class="text">Please Enter Password</small>
+                </div>
+              </nz-form-control>
+            </nz-form-item>
+          </form>
+          <div class="grid-container">
+            <div class="grid-child">
+              <a class="ForgotPassword" routerLink="/forgetPassword">Forgot Password?</a>
+            </div>
+
+            <div class="grid-child">
+              <button type="submit" onclick="onSubmit()" value="submit" block class="loginbutton">
+                Login
+              </button>
+            </div>
+          </div>
+
+          <button type="primary" ghost class="RequestDemo">Request Demo</button>
+        </div>
+
+        <div *ngIf="!isUserNamePasswordLogin" class="main-content padding-30">
+          <app-otp-login></app-otp-login>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+
+  <p class="footer">© 2023 eSwissCall LLC. ALL RIGHTS RESERVED</p>
+</section>  

@@ -1,0 +1,108 @@
+<div class="row dashboard">
+    <span nz-icon nzType="menu" nzTheme="outline" class="hamburger-icon" (click)="open()"></span>
+    <a> <img class="logo" src="./../../assets/logo.png" alt="login-logo" /></a>
+    <span class="header-spacer"></span>
+    <div class="notification-icon text-right cursor-pointer">
+        <span nz-icon nzType="bell" nzTheme="outline" class="bell-icon"></span>
+        <span class="eroll-notifications-count"></span>
+    </div>
+    <div *ngIf="isMobileLayout">
+        <div class="col-lg-12 username">
+            <span>Drushti </span>
+            <span>Shetty</span>
+        </div>
+        <div class="col-lg-12 logout">
+
+            <!-- <button nz-button  class="logout-button"> Logout</button> -->
+            <button nz-button class="logout-button" nzType="default" (click)="showModal()">Logout</button>
+            <nz-modal [(nzVisible)]="isVisible" [nzFooter]="null" [nzBodyStyle]="{ padding: '0' , height:'180px'}">
+                <ng-container *nzModalContent>
+                    <h2 class="alert-header"> <span nz-icon nzType="exclamation-circle" nzTheme="outline"></span> Alert
+                    </h2>
+                    <p class="alert-message">Are you sure do you want to logout?</p>
+                    <button class="no-button" (click)="isVisible = false">No</button>
+                    <button class="yes-button" (click)="onLogout()" >Yes</button>
+                </ng-container>
+            </nz-modal>
+
+
+
+
+
+
+        </div>
+    </div>
+    <div class="user-icon cursor-pointer"><img class="user-img" src="../../assets/avatar.png" alt="login-user"
+            title="View Profile">
+    </div>
+
+    <nz-drawer [nzClosable]="false" [nzVisible]="visible" nzPlacement="left" (nzOnClose)="close()" class="custom-drawer"
+        nzWidth="280px" [nzBodyStyle]="{ background: '#5a36a3', top: '12% !important', color: 'white'}">
+
+        <ng-container *nzDrawerContent>
+            <div class="grid-container">
+                <div class="grid-child">
+                    <span nz-icon nzType="apartment" nzTheme="outline"></span>
+                </div>
+
+                <div class="grid-child">
+                    <p class="hamburger-menu-options">Organizations</p>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-child">
+                    <span nz-icon nzType="book" nzTheme="outline"></span>
+                </div>
+
+                <div class="grid-child">
+                    <p class="hamburger-menu-options">Roll Calls</p>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-child">
+                    <span nz-icon nzType="user" nzTheme="outline"></span>
+                </div>
+
+                <div class="grid-child">
+                    <p class="hamburger-menu-options">Supervisors</p>
+                </div>
+            </div>
+
+            <div class="grid-container" routerLink="/change-password">
+                <div class="grid-child">
+                    <span nz-icon nzType="lock" nzTheme="outline"></span>
+                </div>
+
+                <div class="grid-child">
+                    <p class="hamburger-menu-options">Change Password</p>
+                </div>
+            </div>
+
+            <div class="grid-container" routerLink="/terms-conditions">
+                <div class="grid-child">
+                    <span nz-icon nzType="file" nzTheme="outline"></span>
+                </div>
+
+                <div class="grid-child">
+                    <p class="hamburger-menu-options">Terms & Conditions</p>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-child">
+                    <span nz-icon nzType="logout" nzTheme="outline"></span>
+                </div>
+
+                <div class="grid-child">
+                    <p class="hamburger-menu-options" (click)="showModal()">Logout</p>
+                </div>
+            </div>
+
+        </ng-container>
+
+
+    </nz-drawer>
+
+</div>

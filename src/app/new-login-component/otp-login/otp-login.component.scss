@@ -1,0 +1,187 @@
+.nz-tabs {
+  background-color: var(--secondary-color);
+  width: 400px;
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.otp-input-container input[type="text"] {
+  -webkit-text-security: none;
+  -moz-text-security: none;
+  -ms-text-security: none;
+  -text-security: none;
+}
+
+.loginbutton {
+  background-color: var(--primary-color);
+  width: 100%;
+  max-width: 140px;
+  border: none;
+  border-radius: 5px;
+  height: 60px;
+  color: var(--secondary-color);
+  font-size: large;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.row{
+  display: inline-flex;
+  align-items: center;
+
+}
+.icon{
+  padding-bottom: 15px;
+}
+.margin{
+  margin: 0px 0px 0px 0px;
+}
+.alert-message{
+
+  background-color: #f75314;
+  color: white;
+  font-size: medium;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 30px;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+.loginbutton2 {
+
+  width: 100%;
+  max-width: 140px;
+  border-radius: 5px;
+  height: 60px;
+  color: var(--primary-color);
+  font-size: large;
+  font-weight: 500;
+  margin-bottom: 40px;
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  border-radius: 5px;
+
+
+
+}
+
+.resend-otp{
+border: none;
+margin-top: 10px;
+background-color: var(--secondary-color);
+font-size: 15px;
+height: 60px;
+color: var(--primary-color);
+
+
+}
+
+.User-name {
+  background-color: var(--primary-red);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.otp-text {
+  font-size: 18px !important;
+  padding-top: 20px;
+}
+
+.otp {
+  font-size: 18px !important;
+}
+
+.countdown{
+padding-top: 30px;
+}
+
+.ForgotPassword {
+  color: var(--primary-color);
+  font-size: large;
+  font-weight: 400;
+}
+
+.RequestDemo {
+  color: var(--primary-color);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: var(--secondary-color);
+  max-width: 350px;
+  width: 100%;
+  border-color: var(--primary-color);
+  border-radius: 5px;
+  height: 45px;
+  border-width: 1px;
+  font-size: medium;
+  font-weight: 600
+}
+
+.SendOTP {
+  margin-top: 30px;
+  background-color: var(--primary-color);
+  width: 140px;
+  border: none;
+  border-radius: 5px;
+  height: 60px;
+  color: var(--secondary-color);
+  font-size: large;
+  font-weight: 500;
+}
+
+
+.inp {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 5px 10px;
+  outline: none;
+  max-width: 350px;
+  width: 100%;
+  margin-top: 40px;
+  font-size: large;
+
+}
+
+.nzTitle {
+  background-color: var(--primary-red);
+}
+
+.tabs {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.body {
+  background-color: var(--primary-color) !important;
+  text-align: center;
+
+}
+.text{
+
+  color: red;
+  float: left;
+  padding-left: 30px;
+  
+}
+
+.footer {
+  color: grey;
+
+}
+
+.ant-tabs-tab {
+  font-size: 100px;
+  background-color: var(--primary-red);
+}

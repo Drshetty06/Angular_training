@@ -1,0 +1,104 @@
+
+
+<div class="supervisior-header col-sm-12 col-lg-12 text-left">
+    <h3 class="supervisior-font">Supervisior</h3>
+</div>
+<div class="col-sm-12 col-lg-12 add-supervisior-style">
+    <p>View  Supervisior
+    <p>
+</div>
+
+<hr class="horizontal-line">
+
+<nz-card class="card-design "  [style.opacity]="opacityValue">
+
+    <nz-form [formGroup]="formdetails" class="container-fluid" > 
+     
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <nz-form-item class="col" >
+                        <input   class="inp" placeholder="First Name*" [(ngModel)]="cardData.firstName" formControlName="name" [readonly]="!formEditable"  />
+                        <div
+                            *ngIf="formdetails.get('name')?.invalid && (formdetails.get('name')?.dirty || formdetails.get('name')?.touched)">
+                            <small *ngIf="formdetails.get('name')?.errors?.required" class="text">
+                                Please enter First Name
+                            </small>
+                            <small *ngIf="formdetails.get('name')?.errors?.minlength" class="text">
+                                Your input does not meet the minimum length criteria for this field
+                            </small>
+                        </div>
+    
+                    </nz-form-item>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <nz-form-item class="col">
+                        <input   class="inp" placeholder="Last Name*"  formControlName="lastname" [readonly]="!formEditable"  />
+                        <div
+                            *ngIf="formdetails.get('lastname')?.invalid && (formdetails.get('lastname')?.dirty || formdetails.get('lastname')?.touched)">
+                            <small *ngIf="formdetails.get('lastname')?.errors?.required" class="text">
+                                Please enter Last Name
+                            </small>
+                            <small *ngIf="formdetails.get('lastname')?.errors?.minlength" class="text">
+                                Your input does not meet the minimum length criteria for this field
+                            </small>
+                        </div>
+                    </nz-form-item>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <nz-form-item class="col">
+                        <input   class="inp" appPhoneNumber placeholder="Phone Number*" [(ngModel)]="cardData.Phonenumber" [readonly]="!formEditable" />
+                       
+                    </nz-form-item>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <nz-form-item>
+                        <input   class="inp" placeholder="E-mail ID*" [class.is-invalid]="primEmail?.invalid && primEmail?.touched" type="email"
+                        formControlName="primaryEmail" />
+                      <div *ngIf="
+                          (primEmail?.invalid && primEmail?.touched) || primEmail?.dirty
+                        ">
+                        <small *ngIf="primEmail?.errors?.required" class="text">Please Enter Username</small>
+        
+                        <small *ngIf="primEmail?.errors?.pattern" class="text">Please enter E-mail ID in format
+                          yourname@example.com</small>
+                      </div>
+                    </nz-form-item>
+                </div>
+            </div>
+   
+      
+    </nz-form>
+    <div class="grid-container row">
+        <div class="col">
+            <span class="account-details">Account Type*</span>
+
+            <nz-radio-group class='radio-button-color' [(ngModel)]="radioValue" [(ngModel)]="cardData.accountType" >
+                <label nz-radio nzValue="A">In-House</label>
+                <label nz-radio nzValue="B">Contractual</label>
+            </nz-radio-group>
+        </div>
+        <div class="col">
+            <span class="account-details">Account Status*</span>
+
+            <nz-radio-group class='radio-button-color' [(ngModel)]="radioValue2">
+                <label nz-radio nzValue="A">Enabled</label>
+                <label nz-radio nzValue="B">Disabled</label>
+            </nz-radio-group>
+        </div>
+    </div>
+
+
+</nz-card>
+<!-- 
+<button class="Buttons" nz-button nzType="primary" (click)="formEditable  = true" (click)="increaseOpacity()" (click)="changeButtonText()" (click)="addDotted()" >Edit</button>
+<button class="Buttons2" routerLink="/superVisor-list-screen"> Back</button> -->
+
+<!-- 
+<button class="Buttons" *ngIf="!showCancel && !showSave" nz-button nzType="primary" (click)="edit()" (click)="formEditable  = true" (click)="increaseOpacity()" (click)="changeButtonText()" (click)="addDotted()" >Edit</button> -->
+
+
+<button class="Buttons"  *ngIf="!showCancel && !showSave" (click)="formEditable  = true" (click)="edit()" nz-button nzType="primary" (click)="increaseOpacity()" (click)="formEditable  = true" (click)="addDotted()" >Edit</button> 
+
+<button class="Buttons2"   *ngIf="!showCancel && !showSave " (click)="back()" routerLink="/superVisor-list-screen">Back</button>
+<button class="Buttons"  *ngIf="showSave" (click)="save()">Save</button>
+<button class="Buttons2" *ngIf="showCancel || showBack" (click)="cancel()" >Cancel</button> 

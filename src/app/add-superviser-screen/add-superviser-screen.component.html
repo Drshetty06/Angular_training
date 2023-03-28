@@ -1,0 +1,114 @@
+<div class="lobbyists-header col-sm-12 col-lg-12 text-left">
+    <h3 class="lobbyists-font">Supervisor</h3>
+</div>
+<div class="col-sm-12 col-lg-12 add-lobbyists-style">
+    <p>Add Supervisor</p>
+</div>
+
+<hr class="horizontal-line" />
+
+<nz-card class="card-design">
+    <nz-form [formGroup]="formdetails" class="container-fluid">
+
+        <div class="row">
+
+            <div nz-col nzSpan="5">
+                <p>
+                    <nz-form-item class="col">
+                        <input class="inp" placeholder="First Name*" formControlName="firstName" />
+                        <div
+                            *ngIf="formdetails.get('firstName')?.invalid && (formdetails.get('firstName')?.dirty || formdetails.get('firstName')?.touched)">
+                            <small *ngIf="formdetails.get('firstName')?.errors?.required" class="text">
+                                Please enter First Name
+                            </small>
+                            <small *ngIf="formdetails.get('firstName')?.errors?.minlength" class="text">
+                                Your input does not meet the minimum length criteria for this field
+                            </small>
+                        </div>
+
+                    </nz-form-item>
+                </p>
+
+            </div>
+
+            <div nz-col nzSpan="5">
+                <p>
+                    <nz-form-item class="col">
+                        <input class="inp" placeholder="Last Name*" formControlName="lastName" />
+                        <div
+                            *ngIf="formdetails.get('lastName')?.invalid && (formdetails.get('lastName')?.dirty || formdetails.get('lastName')?.touched)">
+                            <small *ngIf="formdetails.get('lastName')?.errors?.required" class="text">
+                                Please enter Last Name
+                            </small>
+                            <small *ngIf="formdetails.get('lastName')?.errors?.minlength" class="text">
+                                Your input does not meet the minimum length criteria for this field
+                            </small>
+                        </div>
+                    </nz-form-item>
+                </p>
+
+            </div>
+
+            <div nz-col nzSpan="5">
+                <p>
+                    <nz-form-item class="col">
+                        <input class="inp" placeholder="Phone Number*" formControlName="phoneNumber" />
+                        <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)">
+                            <div class="alert alert-danger" class="text" *ngIf="phoneNumber?.errors?.required">
+                                Phone number is required.
+                            </div>
+                            <div class="alert alert-danger" class="text" *ngIf="phoneNumber?.errors?.pattern">
+                                Please enter a valid phone number.
+                            </div>
+                        </div>
+                    </nz-form-item>
+                </p>
+
+            </div>
+            
+            <div nz-col nzSpan="5">
+                <p>
+                    <nz-form-item>
+                        <input class="inp" placeholder="E-mail ID*"
+                            [class.is-invalid]="primEmail?.invalid && primEmail?.touched" type="email"
+                            formControlName="email" />
+                        <div *ngIf="
+                          (primEmail?.invalid && primEmail?.touched) || primEmail?.dirty
+                        ">
+                            <small *ngIf="primEmail?.errors?.required" class="text">Please Enter Username</small>
+    
+                            <small *ngIf="primEmail?.errors?.pattern" class="text">Please enter E-mail ID in format
+                                yourname@example.com</small>
+                        </div>
+                    </nz-form-item>
+                </p>
+
+            </div>
+
+            
+        </div>
+
+
+    </nz-form>
+    <div class="grid-container row">
+        <div class="col">
+            <span class="account-details">Account Type*</span>
+
+            <nz-radio-group class="radio-button-color" [(ngModel)]="radioValue">
+                <label nz-radio nzValue="I">In-House</label>
+                <label nz-radio nzValue="C">Contractual</label>
+            </nz-radio-group>
+        </div>
+        <div class="col">
+            <span class="account-details">Account Status*</span>
+
+            <nz-radio-group class="radio-button-color" [(ngModel)]="radioValue2">
+                <label nz-radio nzValue="enabled">Enabled</label>
+                <label nz-radio nzValue="disabled">Disabled</label>
+            </nz-radio-group>
+        </div>
+    </div>
+</nz-card>
+
+<button class="Buttons" nz-button nzType="primary" (click)=" addUser()">Save</button>
+<button class="Buttons2">Cancel</button>

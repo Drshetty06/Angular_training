@@ -1,0 +1,78 @@
+<div class="content">
+  <div>
+    <img class="logo" src="./../../assets/logo.png" alt="login-logo" />
+  </div>
+
+  <div class="card col-lg-4 col-md-8 col-sm-10">
+    <nz-card [nzBodyStyle]="{ padding: '0' }" class="card-content no-padding ">
+      <div class="ant-card-body">
+        <div class="header-content">
+          <div class="row">
+            <div class="col-6 padding-0">
+              <button nz-button nzType="primary" class="button header-button"
+                [ngClass]="{ 'selected-tab': isUserNamePasswordLogin }" (click)="changeTabs('userName')">
+                User Name
+              </button>
+            </div>
+            <div class="col-6 padding-0">
+              <button nz-button nzType="primary" class="button header-button"
+                [ngClass]="{ 'selected-tab': !isUserNamePasswordLogin }" (click)="changeTabs('userOtp')">
+                OTP Login
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="padding-30 margin" *ngIf="isUserNamePasswordLogin" >
+          <form nz-form [formGroup]="userEmails" (ngSubmit)="onSubmit()" class="test-form" >
+            <nz-form-item  >
+              <nz-form-control>
+                <input appFirstLetter class="inp" placeholder="Username*"
+                  [class.is-invalid]="email?.invalid && email?.touched" type="email" formControlName="email" />
+                <div *ngIf="(email?.invalid && email?.touched) || email?.dirty">
+                  <small *ngIf="email?.errors?.required" class="text">Please Enter Username</small>
+
+                  <small *ngIf="email?.errors?.pattern" class="text">Please enter E-mail ID in format
+                    yourname@example.com</small>
+                </div>
+                <div *ngIf="errorMessage" class="text">
+                  Please verify Username
+                </div>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control>
+                <input appFirstLetter class="inp" placeholder="Password*" type="password"
+                  [class.is-invalid]="password?.invalid && password?.touched" formControlName="password" />
+                <div *ngIf="
+                    (password?.invalid && password?.touched) || password?.dirty
+                  ">
+                  <small *ngIf="password?.errors?.required" class="text">Please Enter Password</small>
+                </div>
+                <div *ngIf="errorMessage" class="text">
+                  Please verify Password
+                </div>
+              </nz-form-control>
+            </nz-form-item>
+          </form>
+          <div class="grid-container">
+            <div class="grid-child">
+              <a class="ForgotPassword" routerLink="/forgot-password">Forgot Password?</a>
+            </div>
+
+            <div class="grid-child">
+              <button type="submit" (click)="onSubmit()"  value="submit" block class="loginbutton">
+                Login
+              </button>
+            </div>
+          </div>
+          <button type="primary" ghost class="RequestDemo">Request Demo</button>
+        </div>
+        <div *ngIf="!isUserNamePasswordLogin" class="nz-tabs padding-30">
+          <app-otp-login></app-otp-login>
+        </div>
+      </div>
+    </nz-card>
+    <p class="footer">© 2023 eSwissCall LLC. ALL RIGHTS RESERVED</p>
+  </div>
+</div>

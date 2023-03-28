@@ -1,0 +1,168 @@
+.content {
+  background-color:  var(--primary-color);
+  width: 100%;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  padding: 3% 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+
+.logo {
+  width: 100px;
+}
+
+.main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding-top: 0px !important;
+}
+
+.row {
+  width: 100%;
+  overflow: hidden;
+}
+
+.padding-30 {
+  padding: 30;
+}
+.no-padding .ant-card-body {
+  padding: 0 !important;
+}
+.header-button {
+  color:  var(--primary-color);
+  font-size: large;
+  border: none;
+  width: 195px;
+  height: 50px;
+  font-weight: 500;
+  margin-top: 0;
+  float: left;
+  width: 50%;
+}
+
+
+.padding-0 {
+  padding: 0;
+}
+
+.button {
+  padding-top: 0px !important;
+  border-radius: 10px
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 0px 0px !important;
+
+}
+
+.card {
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 20px !important;
+
+  padding: 20px;
+
+}
+
+.card-content {
+  border-radius: 10px !important;
+  padding-top: 0 !important;
+}
+
+.inp {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 5px 10px;
+  outline: none;
+  max-width: 350px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: large;
+
+
+}
+.ant-card-body{
+  padding-top: 0 !important;
+}
+.ForgotPassword{
+  color:  var(--primary-color);
+  font-size: large;
+  font-weight: 400;
+}
+
+
+
+.loginbutton{
+  background-color:  var(--primary-color);
+  width: 100%;
+  max-width: 140px;
+  border: none;
+  border-radius: 5px;
+  height: 60px;
+  color: var(--secondary-color);
+  font-size: large;
+  font-weight: 500;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 20px;
+  margin-top: 40px;
+}
+.text{
+
+  color: red;
+  float: left;
+  padding-left: 30px;
+  
+}
+
+.RequestDemo{
+  color:  var(--primary-color);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: var(--secondary-color);
+  max-width: 350px;
+  width: 100%;
+  border-color:  var(--primary-color);
+  border-radius: 5px;
+  height: 45px;
+  border-width: 1px;
+  font-size:medium;
+  font-weight:600
+}
+
+
+.footer{
+  color: grey;
+  background-color:  var(--primary-color);
+  padding-top: 10px;
+}
+
+
+@media only screen and (max-width: 426px) {
+  .margin {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+.max-width{
+  max-width: 100% !important;
+}
+form > .row > div {
+  max-width: 100% !important;
+}
+ 
+}
+form > .row > div {
+  max-width: 100% !important;
+}

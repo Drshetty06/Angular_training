@@ -1,0 +1,71 @@
+{"details": [
+    {    "id": "1",
+        "Name":"Drushti",
+        "LastName": "Shetty",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "drshetty06@gmail.com"
+    },
+
+    {
+        "id": "2",
+        "Name":"Karthik",
+        "LastName": "887",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "Karthik23@gmail.com"
+    },
+
+    {
+        "id": "3",
+        "Name":"Thameem",
+        "LastName": "ABC",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "Thameem89@gmail.com"
+    },
+
+    {
+        "id": "4",
+        "Name":"Vivek",
+        "LastName": "THG",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "Vivek35@gmail.com"
+    },
+    {
+        "id": "5",
+        "Name":"Athulya ",
+        "LastName": "KEF",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "Athulya8636@gmail.com"
+    },
+    {
+        "id": "6",
+        "Name":"Abishek ",
+        "LastName": "LOR",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "Abishek65@gmail.com"
+    },
+    {
+        "id": "7",
+        "Name":"Harish ",
+        "LastName": "AFE",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "Harish87@gmail.com"
+    },
+
+    {
+        "id": "7",
+        "Name":"Nitin ",
+        "LastName": "AFE",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "nithin06@gmail.com"
+    },
+    {
+        "id": "7",
+        "Name":"Anees",
+        "LastName": "AFE",
+        "ContactNumber": "+1 887-777-7777",
+        "email": "Anees06@gmail.com"
+    }
+
+]
+}
+ 

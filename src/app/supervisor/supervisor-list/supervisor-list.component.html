@@ -1,0 +1,67 @@
+
+<div class="lobbyists-header col-sm-12 col-lg-12 text-left">
+  
+  <button class="add-supervisor" nz-button nzType="primary" routerLink="/new-supervisor-screen" ><span nz-icon nzType="plus" nzTheme="outline" ></span>  Add Supervisor </button>
+  <h3 class="lobbyists-font">Supervisor</h3>
+
+</div>
+<div class="grid-container">
+  <div class="grid-child">
+    <input appFirstLetter class="inp" placeholder="Search by Name*" [(ngModel)]="searchTerm" />
+  </div>
+
+  <div class="grid-child">
+    
+<button class="search-button" nz-button nzType="primary" ><span nz-icon nzType="search" nzTheme="outline"></span>  </button>
+  </div>
+</div>
+
+
+  <div nz-row [nzGutter]="8">
+    <div nz-col nz-row [nzSpan]="8" *ngFor="let details of products" (click)="editCard(details.id)">
+      <nz-card  [nzBodyStyle]="{ padding: '0' }"  class="card-design col-lg-8 col-md-6 col-sm-12">
+        <div class="card card-body ">
+          <div class="grid-container1">
+            <div class="grid-child">
+              <span nz-icon nzType="ant-design" nzTheme="outline"></span>
+            </div>
+    
+            <div class="grid-child">
+              <strong class="card-text">{{ details.firstName }}</strong>
+            </div>
+
+            <div class="grid-child">
+              <strong class="card-text">{{ details.lastName }}</strong>
+            </div>
+          </div>
+          <p></p>
+          <div class="grid-container">
+            <div class="grid-child">
+              <span nz-icon nzType="phone" nzTheme="outline"></span>
+            </div>
+    
+            <div class="grid-child">
+              <p class="card-text">{{ details.Phonenumber }}</p>
+            </div>
+          </div>
+
+    
+          <div class="grid-container">
+            <div class="grid-child">
+              <span nz-icon nzType="mail" nzTheme="outline"></span>
+            </div>
+    
+            <div class="grid-child">
+              <p class="card-text">{{ details.Email }}</p>
+            </div>
+          </div>
+    
+    
+        </div>
+      </nz-card>
+    </div>
+   
+  </div>
+
+
+

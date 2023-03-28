@@ -1,0 +1,70 @@
+<ng-container *ngIf="isEnterOtp">
+  <div>
+    <form nz-form [formGroup]="userEmails">
+      <nz-form-item>
+        <nz-form-control>
+          <input appFirstLetter class="inp" id="email" placeholder="Username*"
+            [class.is-invalid]="email?.invalid && email?.touched" type="email" formControlName="email" />
+          <div *ngIf="(email?.invalid && email?.touched) || email?.dirty">
+            <small *ngIf="email?.errors?.required" class="text">Please Enter Username</small>
+            <small *ngIf="email?.errors?.pattern" class="text">Please enter E-mail ID in format
+              yourname@example.com</small>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <button type="primary" class="SendOTP" (click)="sendOtp(); isEnterOtp = false">
+      Send OTP
+    </button>
+    <button type="primary" class="RequestDemo">Request Demo</button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!isEnterOtp">
+  <div>
+    <div *ngIf="!verified && wrongOtpAttempts < 5 && showDivs" class="alert-message">
+      <div class="row">
+        <span nz-icon nzType="warning" nzTheme="outline" class="icon"> </span>
+        <p class="margin">Sorry.The OTP you have entered is Incorrect.</p>
+      </div>
+      <p>Please try again</p>
+    </div>
+
+    <div *ngIf="!verified && wrongOtpAttempts >= 5 && showDivs" class="alert-message">
+      <div class="row">
+        <span nz-icon nzType="warning" nzTheme="outline" class="icon"> </span>
+        <p class="margin">You have exceeded the limit of login attempts</p>
+      </div>
+      <p class="margin">using OTP. Please login using username and</p>
+      <p class="margin">password once to reuse the OTP Login</p>
+    </div>
+
+
+    <div class="col otp-text">Enter 6 Digit Code Sent to Registered</div>
+    <div class="col otp">Email Address and Mobile Number</div>
+
+    <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent"
+      [config]="config"></ng-otp-input>
+    <!-- <ngx-otp-input appOtpInput class="col-12"></ngx-otp-input> -->
+    <div class="timer-resend-otp-holder">
+      <countdown #cd [config]="countDownConfig" (event)="handleCoundownEvent($event)" class="countdown"></countdown>
+    </div>
+  </div>
+  <button [disabled]="isResendOtpDisabled" class="resend-otp">
+    Resend OTP
+  </button>
+  <div class="grid-container">
+    <div class="grid-child">
+      <button type="submit" value="submit" block class="loginbutton2" (click)="isEnterOtp = true">
+        Cancel
+      </button>
+    </div>
+
+    <div class="grid-child">
+        
+      <button type="submit" value="submit" block class="loginbutton" (click)="onSubmit()" [disabled]="loading" >
+        Confirm
+      </button>
+    </div>
+  </div>
+</ng-container>
